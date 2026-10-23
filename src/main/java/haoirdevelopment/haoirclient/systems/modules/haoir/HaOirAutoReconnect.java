@@ -4,7 +4,7 @@ import haoirdevelopment.haoirclient.systems.modules.Categories;
 import haoirdevelopment.haoirclient.systems.modules.Module;
 import haoirdevelopment.haoirclient.settings.SettingGroup;
 import haoirdevelopment.haoirclient.settings.Setting;
-import haoirdevelopment.haoirclient.eventbus.EventHandler;
+import meteordevelopment.orbit.EventHandler;
 import haoirdevelopment.haoirclient.events.world.TickEvent;
 import net.minecraft.client.gui.screens.ConnectScreen;
 import net.minecraft.client.gui.screens.DisconnectedScreen;

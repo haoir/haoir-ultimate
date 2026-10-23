@@ -4,7 +4,7 @@ import haoirdevelopment.haoirclient.systems.modules.Categories;
 import haoirdevelopment.haoirclient.systems.modules.Module;
 import haoirdevelopment.haoirclient.settings.SettingGroup;
 import haoirdevelopment.haoirclient.settings.Setting;
-import haoirdevelopment.haoirclient.eventbus.EventHandler;
+import meteordevelopment.orbit.EventHandler;
 import haoirdevelopment.haoirclient.events.entity.player.AttackEntityEvent;
 import net.minecraft.network.protocol.game.ServerboundMovePlayerPacket;
 import net.minecraft.network.protocol.game.ServerboundMovePlayerPacket.StatusOnly;
