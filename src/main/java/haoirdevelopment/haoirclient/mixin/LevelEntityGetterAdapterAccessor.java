@@ -1,0 +1,18 @@
+/*
+ * This file is part of the HaOir Client distribution (https://github.com/HaOirDevelopment/meteor-client).
+ * Copyright (c) HaOir Development.
+ */
+
+package haoirdevelopment.haoirclient.mixin;
+
+import net.minecraft.world.level.entity.EntityAccess;
+import net.minecraft.world.level.entity.EntitySectionStorage;
+import net.minecraft.world.level.entity.LevelEntityGetterAdapter;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.gen.Accessor;
+
+@Mixin(LevelEntityGetterAdapter.class)
+public interface LevelEntityGetterAdapterAccessor {
+    @Accessor("sectionStorage")
+    <T extends EntityAccess> EntitySectionStorage<T> meteor$getSectionStorage();
+}

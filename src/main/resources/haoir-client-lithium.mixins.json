@@ -1,0 +1,13 @@
+{
+  "required": false,
+  "package": "haoirdevelopment.haoirclient.mixin.lithium",
+  "compatibilityLevel": "JAVA_21",
+  "plugin": "haoirdevelopment.haoirclient.MixinPlugin",
+  "client": [
+    "ChunkAwareBlockCollisionSweeperMixin",
+    "LithiumEntityCollisionsMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

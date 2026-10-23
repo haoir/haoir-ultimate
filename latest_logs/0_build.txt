@@ -1,0 +1,937 @@
+﻿2026-10-22T15:02:38.3406619Z Current runner version: '2.338.0'
+2026-10-22T15:02:38.3431854Z ##[group]Runner Image Provisioner
+2026-10-22T15:02:38.3432711Z Hosted Compute Agent
+2026-10-22T15:02:38.3433242Z Version: 20261012.601
+2026-10-22T15:02:38.3433845Z Commit: f3dc54e1fb89da6852db922499a0233137369e1d
+2026-10-22T15:02:38.3434521Z Build Date: 2026-10-12T17:48:21Z
+2026-10-22T15:02:38.3435137Z Worker ID: {c6648124-01ee-4105-8fe3-5cc3bce9dc19}
+2026-10-22T15:02:38.3435824Z Region: westus3
+2026-10-22T15:02:38.3436352Z Cloud: Azure
+2026-10-22T15:02:38.3436852Z ##[endgroup]
+2026-10-22T15:02:38.3438273Z ##[group]Operating System
+2026-10-22T15:02:38.3438824Z Ubuntu
+2026-10-22T15:02:38.3439778Z 24.04.5
+2026-10-22T15:02:38.3440249Z LTS
+2026-10-22T15:02:38.3440742Z ##[endgroup]
+2026-10-22T15:02:38.3441246Z ##[group]Runner Image
+2026-10-22T15:02:38.3441795Z Image: ubuntu-24.04
+2026-10-22T15:02:38.3442351Z Version: 20261012.334.1
+2026-10-22T15:02:38.3443541Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261012.334/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-22T15:02:38.3444929Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261012.334
+2026-10-22T15:02:38.3445794Z ##[endgroup]
+2026-10-22T15:02:38.3446934Z ##[group]GITHUB_TOKEN Permissions
+2026-10-22T15:02:38.3449667Z Contents: read
+2026-10-22T15:02:38.3450790Z Metadata: read
+2026-10-22T15:02:38.3451309Z Packages: read
+2026-10-22T15:02:38.3451841Z ##[endgroup]
+2026-10-22T15:02:38.3454046Z Secret source: Actions
+2026-10-22T15:02:38.3454951Z Cache mode: write
+2026-10-22T15:02:38.3455588Z Prepare workflow directory
+2026-10-22T15:02:38.3792528Z Prepare all required actions
+2026-10-22T15:02:38.3842397Z Getting action download info
+2026-10-22T15:02:38.8031723Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-10-22T15:02:38.9213527Z Download action repository 'actions/setup-java@v4' (SHA:cf277c60eb25467037889841efdb72551f06f6c3)
+2026-10-22T15:02:39.8112944Z Download action repository 'gradle/actions@v3' (SHA:d9c87d481d55275bb5441eef3fe0e46805f9ef70)
+2026-10-22T15:02:41.2665584Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-10-22T15:02:41.4708237Z Complete job name: build
+2026-10-22T15:02:41.5522270Z ##[group]Run actions/checkout@v4
+2026-10-22T15:02:41.5522920Z with:
+2026-10-22T15:02:41.5523228Z   repository: haoir/haoir-ultimate
+2026-10-22T15:02:41.5526063Z   token: ***
+2026-10-22T15:02:41.5526331Z   ssh-strict: true
+2026-10-22T15:02:41.5526604Z   ssh-user: git
+2026-10-22T15:02:41.5526892Z   persist-credentials: true
+2026-10-22T15:02:41.5527203Z   clean: true
+2026-10-22T15:02:41.5527502Z   sparse-checkout-cone-mode: true
+2026-10-22T15:02:41.5527835Z   fetch-depth: 1
+2026-10-22T15:02:41.5528111Z   fetch-tags: false
+2026-10-22T15:02:41.5528400Z   show-progress: true
+2026-10-22T15:02:41.5528684Z   lfs: false
+2026-10-22T15:02:41.5528944Z   submodules: false
+2026-10-22T15:02:41.5529374Z   set-safe-directory: true
+2026-10-22T15:02:41.5529707Z   allow-unsafe-pr-checkout: false
+2026-10-22T15:02:41.5530592Z ##[endgroup]
+2026-10-22T15:02:41.6549247Z Syncing repository: haoir/haoir-ultimate
+2026-10-22T15:02:41.6551807Z ##[group]Getting Git version info
+2026-10-22T15:02:41.6552757Z Working directory is '/home/runner/work/haoir-ultimate/haoir-ultimate'
+2026-10-22T15:02:41.6554197Z [command]/usr/bin/git version
+2026-10-22T15:02:41.6641942Z git version 2.55.0
+2026-10-22T15:02:41.6678583Z ##[endgroup]
+2026-10-22T15:02:41.6689902Z Temporarily overriding HOME='/home/runner/work/_temp/2c211bfe-d035-400d-97f4-f6c884892471' before making global git config changes
+2026-10-22T15:02:41.6691413Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-22T15:02:41.6697953Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/haoir-ultimate/haoir-ultimate
+2026-10-22T15:02:41.6753168Z Deleting the contents of '/home/runner/work/haoir-ultimate/haoir-ultimate'
+2026-10-22T15:02:41.6761145Z ##[group]Initializing the repository
+2026-10-22T15:02:41.6767552Z [command]/usr/bin/git init /home/runner/work/haoir-ultimate/haoir-ultimate
+2026-10-22T15:02:41.6869752Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-22T15:02:41.6871049Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-22T15:02:41.6872229Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-22T15:02:41.6872990Z hint: call:
+2026-10-22T15:02:41.6873425Z hint:
+2026-10-22T15:02:41.6876338Z hint: 	git config --global init.defaultBranch <name>
+2026-10-22T15:02:41.6880317Z hint:
+2026-10-22T15:02:41.6881096Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-22T15:02:41.6882187Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-22T15:02:41.6883073Z hint:
+2026-10-22T15:02:41.6883560Z hint: 	git branch -m <name>
+2026-10-22T15:02:41.6884084Z hint:
+2026-10-22T15:02:41.6884724Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-22T15:02:41.6886266Z Initialized empty Git repository in /home/runner/work/haoir-ultimate/haoir-ultimate/.git/
+2026-10-22T15:02:41.6889805Z [command]/usr/bin/git remote add origin https://github.com/haoir/haoir-ultimate
+2026-10-22T15:02:41.6935926Z ##[endgroup]
+2026-10-22T15:02:41.6937143Z ##[group]Disabling automatic garbage collection
+2026-10-22T15:02:41.6940174Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-22T15:02:41.6971342Z ##[endgroup]
+2026-10-22T15:02:41.6972390Z ##[group]Setting up auth
+2026-10-22T15:02:41.6979554Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-22T15:02:41.7012304Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-22T15:02:41.7391011Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-22T15:02:41.7431816Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-22T15:02:41.7638141Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-22T15:02:41.7670330Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-22T15:02:41.7855082Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-22T15:02:41.7890144Z ##[endgroup]
+2026-10-22T15:02:41.7891066Z ##[group]Fetching the repository
+2026-10-22T15:02:41.7900846Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +5154be9ed98a758b1797de054d4a0c41201dc40c:refs/remotes/origin/main
+2026-10-22T15:02:42.7117761Z From https://github.com/haoir/haoir-ultimate
+2026-10-22T15:02:42.7118369Z  * [new ref]         5154be9ed98a758b1797de054d4a0c41201dc40c -> origin/main
+2026-10-22T15:02:42.7121669Z ##[endgroup]
+2026-10-22T15:02:42.7122152Z ##[group]Determining the checkout info
+2026-10-22T15:02:42.7124522Z ##[endgroup]
+2026-10-22T15:02:42.7131712Z [command]/usr/bin/git sparse-checkout disable
+2026-10-22T15:02:42.7177451Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-22T15:02:42.7205895Z ##[group]Checking out the ref
+2026-10-22T15:02:42.7211801Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-10-22T15:02:42.7680897Z Switched to a new branch 'main'
+2026-10-22T15:02:42.7683977Z branch 'main' set up to track 'origin/main'.
+2026-10-22T15:02:42.7690916Z ##[endgroup]
+2026-10-22T15:02:42.7730047Z [command]/usr/bin/git log -1 --format=%H
+2026-10-22T15:02:42.7752128Z 5154be9ed98a758b1797de054d4a0c41201dc40c
+2026-10-22T15:02:42.8029970Z ##[group]Run actions/setup-java@v4
+2026-10-22T15:02:42.8030446Z with:
+2026-10-22T15:02:42.8030658Z   java-version: 25
+2026-10-22T15:02:42.8030882Z   distribution: temurin
+2026-10-22T15:02:42.8031119Z   java-package: jdk
+2026-10-22T15:02:42.8031343Z   check-latest: false
+2026-10-22T15:02:42.8031575Z   server-id: github
+2026-10-22T15:02:42.8031803Z   server-username: GITHUB_ACTOR
+2026-10-22T15:02:42.8032065Z   server-password: GITHUB_TOKEN
+2026-10-22T15:02:42.8032328Z   overwrite-settings: true
+2026-10-22T15:02:42.8032564Z   job-status: success
+2026-10-22T15:02:42.8035108Z   token: ***
+2026-10-22T15:02:42.8035334Z ##[endgroup]
+2026-10-22T15:02:42.9658423Z ##[warning]setup-java v4 is deprecated and will no longer receive updates. Please migrate to actions/setup-java@v5.
+2026-10-22T15:02:42.9665990Z ##[group]Installed distributions
+2026-10-22T15:02:42.9895713Z Resolved Java 25.0.4+1 from tool-cache
+2026-10-22T15:02:42.9896358Z Setting Java 25.0.4+1 as the default
+2026-10-22T15:02:42.9906579Z (node:2227) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-22T15:02:42.9907870Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-22T15:02:42.9910052Z Creating toolchains.xml for JDK version 25 from temurin
+2026-10-22T15:02:42.9981337Z Writing to /home/runner/.m2/toolchains.xml
+2026-10-22T15:02:42.9981977Z 
+2026-10-22T15:02:42.9982234Z Java configuration:
+2026-10-22T15:02:42.9982620Z   Distribution: temurin
+2026-10-22T15:02:42.9983033Z   Version: 25.0.4+1
+2026-10-22T15:02:42.9983590Z   Path: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/25.0.4-1/x64
+2026-10-22T15:02:42.9984030Z 
+2026-10-22T15:02:42.9984691Z ##[endgroup]
+2026-10-22T15:02:43.0005241Z Creating settings.xml with server-id: github
+2026-10-22T15:02:43.0037084Z Writing to /home/runner/.m2/settings.xml
+2026-10-22T15:02:43.0335898Z ##[group]Run gradle/actions/setup-gradle@v3
+2026-10-22T15:02:43.0336237Z with:
+2026-10-22T15:02:43.0336462Z   cache-disabled: false
+2026-10-22T15:02:43.0336712Z   cache-read-only: false
+2026-10-22T15:02:43.0336988Z   cache-write-only: false
+2026-10-22T15:02:43.0337249Z   cache-overwrite-existing: false
+2026-10-22T15:02:43.0337578Z   gradle-home-cache-includes: caches
+notifications
+
+2026-10-22T15:02:43.0337928Z   gradle-home-cache-cleanup: false
+2026-10-22T15:02:43.0338199Z   add-job-summary: always
+2026-10-22T15:02:43.0338459Z   add-job-summary-as-pr-comment: never
+2026-10-22T15:02:43.0338754Z   dependency-graph: disabled
+2026-10-22T15:02:43.0339038Z   dependency-graph-continue-on-failure: true
+2026-10-22T15:02:43.0339637Z   build-scan-publish: false
+2026-10-22T15:02:43.0339955Z   validate-wrappers: false
+2026-10-22T15:02:43.0340217Z   generate-job-summary: true
+2026-10-22T15:02:43.0340488Z   gradle-home-cache-strict-match: false
+2026-10-22T15:02:43.0340861Z   workflow-job-context: null
+2026-10-22T15:02:43.0343586Z   github-token: ***
+2026-10-22T15:02:43.0343910Z env:
+2026-10-22T15:02:43.0344248Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/25.0.4-1/x64
+2026-10-22T15:02:43.0344786Z   JAVA_HOME_25_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/25.0.4-1/x64
+2026-10-22T15:02:43.0345358Z ##[endgroup]
+2026-10-22T15:02:43.2251272Z (node:2239) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-22T15:02:43.2252583Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-22T15:02:44.9847985Z Merged default JDK locations into /home/runner/.m2/toolchains.xml
+2026-10-22T15:02:44.9850410Z ##[group]Restore Gradle state from cache
+2026-10-22T15:02:45.0405220Z ##[warning]Failed to restore gradle-home-v1|Linux|build[d92b1dfb78eba2d15d83c8b100da3e24]-5154be9ed98a758b1797de054d4a0c41201dc40c: Error: Cache service responded with 400
+2026-10-22T15:02:45.0482825Z Gradle User Home cache not found. Will initialize empty.
+2026-10-22T15:02:45.0483598Z ##[endgroup]
+2026-10-22T15:02:45.0583735Z ##[group]Run chmod +x gradlew
+2026-10-22T15:02:45.0584116Z [36;1mchmod +x gradlew[0m
+2026-10-22T15:02:45.0762393Z shell: /usr/bin/bash -e {0}
+2026-10-22T15:02:45.0762909Z env:
+2026-10-22T15:02:45.0763228Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/25.0.4-1/x64
+2026-10-22T15:02:45.0763726Z   JAVA_HOME_25_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/25.0.4-1/x64
+2026-10-22T15:02:45.0764140Z   GRADLE_ACTION_ID: gradle/actions/setup-gradle
+2026-10-22T15:02:45.0764457Z   GRADLE_BUILD_ACTION_SETUP_COMPLETED: true
+2026-10-22T15:02:45.0764754Z   GRADLE_BUILD_ACTION_CACHE_RESTORED: true
+2026-10-22T15:02:45.0765194Z   DEVELOCITY_INJECTION_INIT_SCRIPT_NAME: gradle-actions.inject-develocity.init.gradle
+2026-10-22T15:02:45.0765681Z   DEVELOCITY_AUTO_INJECTION_CUSTOM_VALUE: gradle-actions
+2026-10-22T15:02:45.0766006Z   GITHUB_DEPENDENCY_GRAPH_ENABLED: false
+2026-10-22T15:02:45.0766273Z ##[endgroup]
+2026-10-22T15:02:45.0886359Z ##[group]Run ./gradlew build --no-daemon
+2026-10-22T15:02:45.0886705Z [36;1m./gradlew build --no-daemon[0m
+2026-10-22T15:02:45.0922194Z shell: /usr/bin/bash -e {0}
+2026-10-22T15:02:45.0922459Z env:
+2026-10-22T15:02:45.0922791Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/25.0.4-1/x64
+2026-10-22T15:02:45.0923277Z   JAVA_HOME_25_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/25.0.4-1/x64
+2026-10-22T15:02:45.0923693Z   GRADLE_ACTION_ID: gradle/actions/setup-gradle
+2026-10-22T15:02:45.0924021Z   GRADLE_BUILD_ACTION_SETUP_COMPLETED: true
+2026-10-22T15:02:45.0924316Z   GRADLE_BUILD_ACTION_CACHE_RESTORED: true
+2026-10-22T15:02:45.0924745Z   DEVELOCITY_INJECTION_INIT_SCRIPT_NAME: gradle-actions.inject-develocity.init.gradle
+2026-10-22T15:02:45.0925232Z   DEVELOCITY_AUTO_INJECTION_CUSTOM_VALUE: gradle-actions
+2026-10-22T15:02:45.0925561Z   GITHUB_DEPENDENCY_GRAPH_ENABLED: false
+2026-10-22T15:02:45.0925830Z ##[endgroup]
+2026-10-22T15:02:46.2428985Z Fetching distribution.
+2026-10-22T15:02:46.2433291Z Downloading https://services.gradle.org/distributions/gradle-9.8.1-bin.zip
+2026-10-22T15:02:49.9694051Z ..............10%..............20%...............30%..............40%...............50%..............60%...............70%..............80%...............90%..............100%
+2026-10-22T15:02:52.8283338Z 
+2026-10-22T15:02:52.8290238Z Welcome to Gradle 9.8.1!
+2026-10-22T15:02:52.8301714Z 
+2026-10-22T15:02:52.8302163Z Here are the highlights of this release:
+2026-10-22T15:02:52.8302653Z  - Java 27 support
+2026-10-22T15:02:52.8303051Z  - Maven mirror settings reuse
+2026-10-22T15:02:52.8303469Z  - Linked problem locations in build output
+2026-10-22T15:02:52.8303784Z 
+2026-10-22T15:02:52.8304102Z For more details see https://docs.gradle.org/9.8.1/release-notes.html
+2026-10-22T15:02:52.8304571Z 
+2026-10-22T15:02:53.0275642Z To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/9.8.1/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+2026-10-22T15:02:55.2272950Z Daemon will be stopped at the end of the build 
+2026-10-22T15:02:57.5272758Z Calculating task graph as no cached configuration is available for tasks: build
+2026-10-22T15:03:24.0309824Z 
+2026-10-22T15:03:24.0340417Z > Configure project :
+2026-10-22T15:03:24.0410198Z Fabric Loom: 1.18.4
+2026-10-22T15:04:04.9271670Z 
+2026-10-22T15:04:04.9279686Z > Task :processLauncherResources NO-SOURCE
+2026-10-22T15:04:05.3275503Z > Task :processResources
+2026-10-22T15:04:05.6289720Z 
+2026-10-22T15:04:05.6319888Z > Task :processIncludeJars
+2026-10-22T15:04:05.6340092Z (1.1) is not valid semver for dependency meteordevelopment:discord-ipc:1.1
+2026-10-22T15:04:05.7270993Z 
+2026-10-22T15:04:05.7273539Z > Task :processTestResources NO-SOURCE
+2026-10-22T15:04:05.7275115Z > Task :sourcesJar
+2026-10-22T15:04:07.1300096Z > Task :compileLauncherJava
+2026-10-22T15:04:07.1300620Z > Task :launcherClasses
+2026-10-22T15:04:09.1294402Z > Task :validateAccessWidener
+2026-10-22T15:04:12.7289770Z 
+2026-10-22T15:04:12.7291854Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirStep.java:3: error: package meteordevelopment.meteorclient.events.world does not exist
+2026-10-22T15:04:12.7303438Z > Task :compileJava
+2026-10-22T15:04:12.7304346Z import meteordevelopment.meteorclient.events.world.TickEvent;
+2026-10-22T15:04:12.7305223Z                                                   ^
+2026-10-22T15:04:12.7306857Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirStep.java:5: error: package meteordevelopment.meteorclient.systems.modules does not exist
+2026-10-22T15:04:12.7308785Z import meteordevelopment.meteorclient.systems.modules.Categories;
+2026-10-22T15:04:12.7309763Z                                                      ^
+2026-10-22T15:04:12.7311809Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirStep.java:6: error: package meteordevelopment.meteorclient.systems.modules does not exist
+2026-10-22T15:04:12.7314113Z import meteordevelopment.meteorclient.systems.modules.Module;
+2026-10-22T15:04:12.7317109Z                                                      ^
+2026-10-22T15:04:12.7318670Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirStep.java:10: error: cannot inherit from final Module
+2026-10-22T15:04:12.7320365Z public class HaOirStep extends Module {
+2026-10-22T15:04:12.7321087Z                                ^
+2026-10-22T15:04:12.7322501Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirStep.java:11: error: cannot find symbol
+2026-10-22T15:04:12.7344826Z     private final SettingGroup sgGeneral = settings.getDefaultGroup();
+2026-10-22T15:04:12.7345626Z                   ^
+2026-10-22T15:04:12.7346142Z   symbol:   class SettingGroup
+2026-10-22T15:04:12.7346695Z   location: class HaOirStep
+2026-10-22T15:04:12.7347907Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirStep.java:12: error: cannot find symbol
+2026-10-22T15:04:12.7349904Z     private final Setting<Boolean> vanilla = sgGeneral.add(new BoolSetting.Builder().name("vanilla").defaultValue(false).build());
+2026-10-22T15:04:12.7351008Z                   ^
+2026-10-22T15:04:12.7351474Z   symbol:   class Setting
+2026-10-22T15:04:12.7369407Z   location: class HaOirStep
+2026-10-22T15:04:12.7400651Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirStep.java:13: error: cannot find symbol
+2026-10-22T15:04:12.7408332Z     private final Setting<Integer> stepHeight = sgGeneral.add(new IntSetting.Builder().name("height").defaultValue(2).min(1).max(2).build());
+2026-10-22T15:04:12.7409674Z                   ^
+2026-10-22T15:04:12.7410218Z   symbol:   class Setting
+2026-10-22T15:04:12.7410732Z   location: class HaOirStep
+2026-10-22T15:04:12.7412142Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirStep.java:20: error: package TickEvent does not exist
+2026-10-22T15:04:12.7413746Z     private void onTick(TickEvent.Post event) {
+2026-10-22T15:04:12.7414402Z                                  ^
+2026-10-22T15:04:12.7416107Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirStep.java:4: error: package meteordevelopment.meteorclient.settings does not exist
+2026-10-22T15:04:12.7417687Z import meteordevelopment.meteorclient.settings.*;
+2026-10-22T15:04:12.7418266Z                                      ^
+2026-10-22T15:04:12.7420097Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirCriticals.java:3: error: package meteordevelopment.meteorclient.events.packets does not exist
+2026-10-22T15:04:12.7422186Z import meteordevelopment.meteorclient.events.packets.PacketEvent;
+2026-10-22T15:04:12.7423046Z                                                     ^
+2026-10-22T15:04:12.7424702Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirCriticals.java:5: error: package meteordevelopment.meteorclient.systems.modules does not exist
+2026-10-22T15:04:12.7427061Z import meteordevelopment.meteorclient.systems.modules.Categories;
+2026-10-22T15:04:12.7427935Z                                                      ^
+2026-10-22T15:04:12.7429926Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirCriticals.java:6: error: package meteordevelopment.meteorclient.systems.modules does not exist
+2026-10-22T15:04:12.7431988Z import meteordevelopment.meteorclient.systems.modules.Module;
+2026-10-22T15:04:12.7433158Z                                                      ^
+2026-10-22T15:04:12.7434695Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirCriticals.java:11: error: cannot inherit from final Module
+2026-10-22T15:04:12.7436379Z public class HaOirCriticals extends Module {
+2026-10-22T15:04:12.7446810Z                                     ^
+2026-10-22T15:04:12.7453906Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirCriticals.java:13: error: cannot find symbol
+2026-10-22T15:04:12.7458936Z     private final SettingGroup sgGeneral = settings.getDefaultGroup();
+2026-10-22T15:04:12.7459899Z                   ^
+2026-10-22T15:04:12.7460402Z   symbol:   class SettingGroup
+2026-10-22T15:04:12.7460970Z   location: class HaOirCriticals
+2026-10-22T15:04:12.7462273Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirCriticals.java:14: error: cannot find symbol
+2026-10-22T15:04:12.7464311Z     private final Setting<Mode> mode = sgGeneral.add(new EnumSetting.Builder<Mode>().name("mode").defaultValue(Mode.PACKET).build());
+2026-10-22T15:04:12.7465408Z                   ^
+2026-10-22T15:04:12.7465859Z   symbol:   class Setting
+2026-10-22T15:04:12.7472351Z   location: class HaOirCriticals
+2026-10-22T15:04:12.7473875Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirCriticals.java:15: error: cannot find symbol
+2026-10-22T15:04:12.7476173Z     private final Setting<Integer> packets = sgGeneral.add(new IntSetting.Builder().name("packets").defaultValue(2).min(1).sliderMax(5).visible(() -> mode.get() == Mode.PACKET).build());
+2026-10-22T15:04:12.7477499Z                   ^
+2026-10-22T15:04:12.7477967Z   symbol:   class Setting
+2026-10-22T15:04:12.7480671Z   location: class HaOirCriticals
+2026-10-22T15:04:12.7482169Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirCriticals.java:16: error: cannot find symbol
+2026-10-22T15:04:12.7484618Z     private final Setting<Integer> desyncDelay = sgGeneral.add(new IntSetting.Builder().name("desync-delay").defaultValue(10).min(0).sliderMax(500).visible(() -> mode.get() == Mode.PACKET).build());
+2026-10-22T15:04:12.7486187Z                   ^
+2026-10-22T15:04:12.7486703Z   symbol:   class Setting
+2026-10-22T15:04:12.7487460Z   location: class HaOirCriticals
+2026-10-22T15:04:12.7489013Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirCriticals.java:25: error: package PacketEvent does not exist
+2026-10-22T15:04:12.7490701Z     private void onSendPacket(PacketEvent.Send event) {
+2026-10-22T15:04:12.7491410Z                                          ^
+2026-10-22T15:04:12.7493120Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirCriticals.java:4: error: package meteordevelopment.meteorclient.settings does not exist
+2026-10-22T15:04:12.7495658Z import meteordevelopment.meteorclient.settings.*;
+2026-10-22T15:04:12.7496374Z                                      ^
+2026-10-22T15:04:12.8274860Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirAutoReconnect.java:3: error: package meteordevelopment.meteorclient.systems.modules does not exist
+2026-10-22T15:04:12.8278497Z import meteordevelopment.meteorclient.systems.modules.Categories;
+2026-10-22T15:04:12.8279841Z                                                      ^
+2026-10-22T15:04:12.8282142Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirAutoReconnect.java:4: error: package meteordevelopment.meteorclient.systems.modules does not exist
+2026-10-22T15:04:12.8285193Z import meteordevelopment.meteorclient.systems.modules.Module;
+2026-10-22T15:04:12.8313896Z                                                      ^
+2026-10-22T15:04:12.8316188Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirAutoReconnect.java:7: error: package meteordevelopment.meteorclient.events.world does not exist
+2026-10-22T15:04:12.8318378Z import meteordevelopment.meteorclient.events.world.TickEvent;
+2026-10-22T15:04:12.8319373Z                                                   ^
+2026-10-22T15:04:12.8320821Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirAutoReconnect.java:14: error: cannot inherit from final Module
+2026-10-22T15:04:12.8322464Z public class HaOirAutoReconnect extends Module {
+2026-10-22T15:04:12.8323099Z                                         ^
+2026-10-22T15:04:12.8324456Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirAutoReconnect.java:15: error: cannot find symbol
+2026-10-22T15:04:12.8326178Z     private final SettingGroup sgGeneral = settings.getDefaultGroup();
+2026-10-22T15:04:12.8326965Z                   ^
+2026-10-22T15:04:12.8327483Z   symbol:   class SettingGroup
+2026-10-22T15:04:12.8328082Z   location: class HaOirAutoReconnect
+2026-10-22T15:04:12.8329637Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirAutoReconnect.java:16: error: cannot find symbol
+2026-10-22T15:04:12.8331692Z     private final Setting<Integer> delay = sgGeneral.add(new IntSetting.Builder().name("delay").defaultValue(3).min(1).sliderMax(30).build());
+2026-10-22T15:04:12.8332766Z                   ^
+2026-10-22T15:04:12.8333214Z   symbol:   class Setting
+2026-10-22T15:04:12.8333763Z   location: class HaOirAutoReconnect
+2026-10-22T15:04:12.8335356Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirAutoReconnect.java:27: error: package TickEvent does not exist
+2026-10-22T15:04:12.8336883Z     private void onTick(TickEvent.Post event) {
+2026-10-22T15:04:12.8337526Z                                  ^
+2026-10-22T15:04:12.8339346Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirAutoReconnect.java:5: error: package meteordevelopment.meteorclient.settings does not exist
+2026-10-22T15:04:12.8341046Z import meteordevelopment.meteorclient.settings.*;
+2026-10-22T15:04:12.8341748Z                                      ^
+2026-10-22T15:04:13.1272607Z warning: unknown enum constant Level.FULL
+2026-10-22T15:04:13.1276178Z   reason: class file for com.google.j2objc.annotations.ReflectionSupport$Level not found
+2026-10-22T15:04:14.5291898Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/utils/entity/EntityUtils.java:118: warning: [deprecation] isSolid() in BlockStateBase has been deprecated
+2026-10-22T15:04:14.5298663Z             if (block != Blocks.COBWEB && block != Blocks.BAMBOO_SAPLING && state.isSolid()) break;
+2026-10-22T15:04:14.5300170Z                                                                                  ^
+2026-10-22T15:04:15.6307644Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/Modules.java:78: error: cannot find symbol
+2026-10-22T15:04:15.6320761Z         add(new haoirdevelopment.haoirclient.systems.modules.haoir.HaOirCriticals());
+2026-10-22T15:04:15.6321847Z                                                                   ^
+2026-10-22T15:04:15.6322622Z   symbol:   class HaOirCriticals
+2026-10-22T15:04:15.6323542Z   location: package haoirdevelopment.haoirclient.systems.modules.haoir
+2026-10-22T15:04:15.6325152Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/Modules.java:79: error: cannot find symbol
+2026-10-22T15:04:15.6326731Z         add(new haoirdevelopment.haoirclient.systems.modules.haoir.HaOirStep());
+2026-10-22T15:04:15.6328136Z                                                                   ^
+2026-10-22T15:04:15.6328848Z   symbol:   class HaOirStep
+2026-10-22T15:04:15.6329832Z   location: package haoirdevelopment.haoirclient.systems.modules.haoir
+2026-10-22T15:04:15.6331431Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/Modules.java:81: error: cannot find symbol
+2026-10-22T15:04:15.6333227Z         add(new haoirdevelopment.haoirclient.systems.modules.haoir.HaOirPacketClicker());
+2026-10-22T15:04:15.6334301Z                                                                   ^
+2026-10-22T15:04:15.6334965Z   symbol:   class HaOirPacketClicker
+2026-10-22T15:04:15.6335807Z   location: package haoirdevelopment.haoirclient.systems.modules.haoir
+2026-10-22T15:04:15.6337395Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/Modules.java:82: error: cannot find symbol
+2026-10-22T15:04:15.6339247Z         add(new haoirdevelopment.haoirclient.systems.modules.haoir.HaOirAutoReconnect());
+2026-10-22T15:04:15.6340304Z                                                                   ^
+2026-10-22T15:04:15.6340966Z   symbol:   class HaOirAutoReconnect
+2026-10-22T15:04:15.6341819Z   location: package haoirdevelopment.haoirclient.systems.modules.haoir
+2026-10-22T15:04:16.7281181Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirStep.java:11: error: cannot find symbol
+2026-10-22T15:04:16.7300105Z     private final SettingGroup sgGeneral = settings.getDefaultGroup();
+2026-10-22T15:04:16.7335547Z                                            ^
+2026-10-22T15:04:16.7336135Z   symbol:   variable settings
+2026-10-22T15:04:16.7336584Z   location: class HaOirStep
+2026-10-22T15:04:16.7337895Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirStep.java:12: error: package BoolSetting does not exist
+2026-10-22T15:04:16.7340073Z     private final Setting<Boolean> vanilla = sgGeneral.add(new BoolSetting.Builder().name("vanilla").defaultValue(false).build());
+2026-10-22T15:04:16.7341177Z                                                                           ^
+2026-10-22T15:04:16.7342620Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirStep.java:13: error: package IntSetting does not exist
+2026-10-22T15:04:16.7344621Z     private final Setting<Integer> stepHeight = sgGeneral.add(new IntSetting.Builder().name("height").defaultValue(2).min(1).max(2).build());
+2026-10-22T15:04:16.7345764Z                                                                             ^
+2026-10-22T15:04:16.7347083Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirStep.java:16: error: cannot find symbol
+2026-10-22T15:04:16.7349339Z         super(Categories.Movement, "haoir-step", "原味Phobos爬台阶."); 
+2026-10-22T15:04:16.7349940Z               ^
+2026-10-22T15:04:16.7350334Z   symbol:   variable Categories
+2026-10-22T15:04:16.7350790Z   location: class HaOirStep
+2026-10-22T15:04:16.7351909Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirStep.java:21: error: cannot find symbol
+2026-10-22T15:04:16.7353558Z         if (mc.player == null || mc.level == null) return;
+2026-10-22T15:04:16.7354071Z             ^
+2026-10-22T15:04:16.7354392Z   symbol:   variable mc
+2026-10-22T15:04:16.7354771Z   location: class HaOirStep
+2026-10-22T15:04:16.7355856Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirStep.java:21: error: cannot find symbol
+2026-10-22T15:04:16.7357122Z         if (mc.player == null || mc.level == null) return;
+2026-10-22T15:04:16.7357598Z                                  ^
+2026-10-22T15:04:16.7358011Z   symbol:   variable mc
+2026-10-22T15:04:16.7358393Z   location: class HaOirStep
+2026-10-22T15:04:16.8331682Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirStep.java:22: error: package mc does not exist
+2026-10-22T15:04:16.8354406Z         if (mc.player.onGround() && !mc.player.isInWater() && !mc.player.isInLava() && mc.player.fallDistance == 0.0f && !mc.options.keyJump.isDown() && !mc.player.isShiftKeyDown()) {
+2026-10-22T15:04:16.8363551Z               ^
+2026-10-22T15:04:16.8365046Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirStep.java:22: error: package mc does not exist
+2026-10-22T15:04:16.8367601Z         if (mc.player.onGround() && !mc.player.isInWater() && !mc.player.isInLava() && mc.player.fallDistance == 0.0f && !mc.options.keyJump.isDown() && !mc.player.isShiftKeyDown()) {
+2026-10-22T15:04:16.8369015Z                                        ^
+2026-10-22T15:04:16.8370675Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirStep.java:22: error: package mc does not exist
+2026-10-22T15:04:16.8372831Z         if (mc.player.onGround() && !mc.player.isInWater() && !mc.player.isInLava() && mc.player.fallDistance == 0.0f && !mc.options.keyJump.isDown() && !mc.player.isShiftKeyDown()) {
+2026-10-22T15:04:16.8374248Z                                                                  ^
+2026-10-22T15:04:16.8375680Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirStep.java:22: error: package mc does not exist
+2026-10-22T15:04:16.8377826Z         if (mc.player.onGround() && !mc.player.isInWater() && !mc.player.isInLava() && mc.player.fallDistance == 0.0f && !mc.options.keyJump.isDown() && !mc.player.isShiftKeyDown()) {
+2026-10-22T15:04:16.8379364Z                                                                                          ^
+2026-10-22T15:04:16.8380980Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirStep.java:22: error: package mc.options does not exist
+2026-10-22T15:04:16.8383172Z         if (mc.player.onGround() && !mc.player.isInWater() && !mc.player.isInLava() && mc.player.fallDistance == 0.0f && !mc.options.keyJump.isDown() && !mc.player.isShiftKeyDown()) {
+2026-10-22T15:04:16.8384753Z                                                                                                                                     ^
+2026-10-22T15:04:16.8386290Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirStep.java:22: error: package mc does not exist
+2026-10-22T15:04:16.8388583Z         if (mc.player.onGround() && !mc.player.isInWater() && !mc.player.isInLava() && mc.player.fallDistance == 0.0f && !mc.options.keyJump.isDown() && !mc.player.isShiftKeyDown()) {
+2026-10-22T15:04:16.8390306Z                                                                                                                                                             ^
+2026-10-22T15:04:16.8391949Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirStep.java:23: error: package mc does not exist
+2026-10-22T15:04:16.8395395Z             double rheight = mc.player.getBoundingBox().minY - mc.player.getY();
+2026-10-22T15:04:16.8396687Z                                ^
+2026-10-22T15:04:16.8398008Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirStep.java:23: error: package mc does not exist
+2026-10-22T15:04:16.8399735Z             double rheight = mc.player.getBoundingBox().minY - mc.player.getY();
+2026-10-22T15:04:16.8400550Z                                                                  ^
+2026-10-22T15:04:16.8401834Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirStep.java:25: error: cannot find symbol
+2026-10-22T15:04:16.8403565Z                 if (!vanilla.get()) { ncpStep(rheight); toggle(); }
+2026-10-22T15:04:16.8404254Z                                                         ^
+2026-10-22T15:04:16.8404824Z   symbol:   method toggle()
+2026-10-22T15:04:16.8405328Z   location: class HaOirStep
+2026-10-22T15:04:16.8406620Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirStep.java:31: error: package mc does not exist
+2026-10-22T15:04:16.8408221Z         double posX = mc.player.getX(), posZ = mc.player.getZ(), y = mc.player.getY();
+2026-10-22T15:04:16.8409007Z                         ^
+2026-10-22T15:04:16.8410478Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirStep.java:31: error: package mc does not exist
+2026-10-22T15:04:16.8412066Z         double posX = mc.player.getX(), posZ = mc.player.getZ(), y = mc.player.getY();
+2026-10-22T15:04:16.8412860Z                                                  ^
+2026-10-22T15:04:16.8414444Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirStep.java:31: error: package mc does not exist
+2026-10-22T15:04:16.8416152Z         double posX = mc.player.getX(), posZ = mc.player.getZ(), y = mc.player.getY();
+2026-10-22T15:04:16.8417036Z                                                                        ^
+2026-10-22T15:04:16.8418458Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirStep.java:51: error: cannot find symbol
+2026-10-22T15:04:16.8420178Z         mc.getConnection().send(new ServerboundMovePlayerPacket.Pos(x, y, z, false, false)); 
+2026-10-22T15:04:16.8421062Z         ^
+2026-10-22T15:04:16.8421479Z   symbol:   variable mc
+2026-10-22T15:04:16.8421949Z   location: class HaOirStep
+2026-10-22T15:04:16.8423234Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirCriticals.java:13: error: cannot find symbol
+2026-10-22T15:04:16.8424807Z     private final SettingGroup sgGeneral = settings.getDefaultGroup();
+2026-10-22T15:04:16.8425551Z                                            ^
+2026-10-22T15:04:16.8426090Z   symbol:   variable settings
+2026-10-22T15:04:16.8426596Z   location: class HaOirCriticals
+2026-10-22T15:04:16.8428058Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirCriticals.java:14: error: package EnumSetting does not exist
+2026-10-22T15:04:16.8430151Z     private final Setting<Mode> mode = sgGeneral.add(new EnumSetting.Builder<Mode>().name("mode").defaultValue(Mode.PACKET).build());
+2026-10-22T15:04:16.8431266Z                                                                     ^
+2026-10-22T15:04:16.8432774Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirCriticals.java:15: error: package IntSetting does not exist
+2026-10-22T15:04:16.8435166Z     private final Setting<Integer> packets = sgGeneral.add(new IntSetting.Builder().name("packets").defaultValue(2).min(1).sliderMax(5).visible(() -> mode.get() == Mode.PACKET).build());
+2026-10-22T15:04:16.8436636Z                                                                          ^
+2026-10-22T15:04:16.8438423Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirCriticals.java:16: error: package IntSetting does not exist
+2026-10-22T15:04:16.8443620Z     private final Setting<Integer> desyncDelay = sgGeneral.add(new IntSetting.Builder().name("desync-delay").defaultValue(10).min(0).sliderMax(500).visible(() -> mode.get() == Mode.PACKET).build());
+2026-10-22T15:04:16.8445643Z                                                                              ^
+2026-10-22T15:04:16.8447026Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirCriticals.java:21: error: cannot find symbol
+2026-10-22T15:04:16.8449358Z         super(Categories.Combat, "haoir-criticals", "原味Phobos暴击."); 
+2026-10-22T15:04:16.8450092Z               ^
+2026-10-22T15:04:16.8450537Z   symbol:   variable Categories
+2026-10-22T15:04:16.8451059Z   location: class HaOirCriticals
+2026-10-22T15:04:16.8452402Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirCriticals.java:27: error: cannot find symbol
+2026-10-22T15:04:16.8454176Z             if (interactPacket.getType() == ServerboundInteractPacket.ActionType.ATTACK) {
+2026-10-22T15:04:16.8455060Z                               ^
+2026-10-22T15:04:16.8455567Z   symbol:   method getType()
+2026-10-22T15:04:16.8456275Z   location: variable interactPacket of type ServerboundInteractPacket
+2026-10-22T15:04:16.8457846Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirCriticals.java:27: error: cannot find symbol
+2026-10-22T15:04:16.8459472Z             if (interactPacket.getType() == ServerboundInteractPacket.ActionType.ATTACK) {
+2026-10-22T15:04:16.8460376Z                                                                      ^
+2026-10-22T15:04:16.8460983Z   symbol:   variable ActionType
+2026-10-22T15:04:16.8461489Z   location: class ServerboundInteractPacket
+2026-10-22T15:04:16.8462901Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirCriticals.java:28: error: cannot find symbol
+2026-10-22T15:04:16.8464400Z                 if (mc.player == null || mc.level == null) return;
+2026-10-22T15:04:16.8465013Z                     ^
+2026-10-22T15:04:16.8465456Z   symbol:   variable mc
+2026-10-22T15:04:16.8465929Z   location: class HaOirCriticals
+2026-10-22T15:04:16.8467262Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirCriticals.java:28: error: cannot find symbol
+2026-10-22T15:04:16.8468772Z                 if (mc.player == null || mc.level == null) return;
+2026-10-22T15:04:16.8469543Z                                          ^
+2026-10-22T15:04:16.8470069Z   symbol:   variable mc
+2026-10-22T15:04:16.8470546Z   location: class HaOirCriticals
+2026-10-22T15:04:16.8472008Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirCriticals.java:29: error: package mc does not exist
+2026-10-22T15:04:16.8474074Z                 if (!mc.player.onGround() || mc.options.keyJump.isDown() || mc.player.isInWater() || mc.player.isInLava()) return;
+2026-10-22T15:04:16.8475005Z                        ^
+2026-10-22T15:04:16.8476389Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirCriticals.java:29: error: package mc.options does not exist
+2026-10-22T15:04:16.8478334Z                 if (!mc.player.onGround() || mc.options.keyJump.isDown() || mc.player.isInWater() || mc.player.isInLava()) return;
+2026-10-22T15:04:16.8479510Z                                                        ^
+2026-10-22T15:04:16.8480920Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirCriticals.java:29: error: package mc does not exist
+2026-10-22T15:04:16.8483179Z                 if (!mc.player.onGround() || mc.options.keyJump.isDown() || mc.player.isInWater() || mc.player.isInLava()) return;
+2026-10-22T15:04:16.8484268Z                                                                               ^
+2026-10-22T15:04:16.8485784Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirCriticals.java:29: error: package mc does not exist
+2026-10-22T15:04:16.8487768Z                 if (!mc.player.onGround() || mc.options.keyJump.isDown() || mc.player.isInWater() || mc.player.isInLava()) return;
+2026-10-22T15:04:16.8488879Z                                                                                                        ^
+2026-10-22T15:04:16.8490708Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirCriticals.java:35: error: package mc does not exist
+2026-10-22T15:04:16.8492368Z                 double x = mc.player.getX(), y = mc.player.getY(), z = mc.player.getZ();
+2026-10-22T15:04:16.8493146Z                              ^
+2026-10-22T15:04:16.8494492Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirCriticals.java:35: error: package mc does not exist
+2026-10-22T15:04:16.8496121Z                 double x = mc.player.getX(), y = mc.player.getY(), z = mc.player.getZ();
+2026-10-22T15:04:16.8496918Z                                                    ^
+2026-10-22T15:04:16.8498388Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirCriticals.java:35: error: package mc does not exist
+2026-10-22T15:04:16.8500235Z                 double x = mc.player.getX(), y = mc.player.getY(), z = mc.player.getZ();
+2026-10-22T15:04:16.8501065Z                                                                          ^
+2026-10-22T15:04:16.8506409Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirCriticals.java:45: error: cannot find symbol
+2026-10-22T15:04:16.8508280Z                             mc.getConnection().send(new ServerboundMovePlayerPacket.StatusOnly(false, false)); 
+2026-10-22T15:04:16.8509360Z                             ^
+2026-10-22T15:04:16.8509851Z   symbol:   variable mc
+2026-10-22T15:04:16.8510362Z   location: class HaOirCriticals
+2026-10-22T15:04:16.8511731Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirCriticals.java:55: error: cannot find symbol
+2026-10-22T15:04:16.8513481Z         mc.getConnection().send(new ServerboundMovePlayerPacket.Pos(x, y, z, false, false)); 
+2026-10-22T15:04:16.8514341Z         ^
+2026-10-22T15:04:16.8514763Z   symbol:   variable mc
+2026-10-22T15:04:16.8515258Z   location: class HaOirCriticals
+2026-10-22T15:04:16.8516648Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirAutoReconnect.java:15: error: cannot find symbol
+2026-10-22T15:04:16.8518214Z     private final SettingGroup sgGeneral = settings.getDefaultGroup();
+2026-10-22T15:04:16.8518960Z                                            ^
+2026-10-22T15:04:16.8519632Z   symbol:   variable settings
+2026-10-22T15:04:16.8520166Z   location: class HaOirAutoReconnect
+2026-10-22T15:04:16.8521759Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirAutoReconnect.java:16: error: package IntSetting does not exist
+2026-10-22T15:04:16.8523928Z     private final Setting<Integer> delay = sgGeneral.add(new IntSetting.Builder().name("delay").defaultValue(3).min(1).sliderMax(30).build());
+2026-10-22T15:04:16.8525154Z                                                                        ^
+2026-10-22T15:04:16.8526578Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirAutoReconnect.java:20: error: cannot find symbol
+2026-10-22T15:04:16.8528880Z         super(Categories.Player, "haoir-reconnect", "自动重连."); 
+2026-10-22T15:04:16.8529710Z               ^
+2026-10-22T15:04:16.8530172Z   symbol:   variable Categories
+2026-10-22T15:04:16.8531288Z   location: class HaOirAutoReconnect
+2026-10-22T15:04:16.8560446Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirAutoReconnect.java:23: error: method does not override or implement a method from a supertype
+2026-10-22T15:04:16.8589947Z     @Override
+2026-10-22T15:04:16.8596249Z     ^
+2026-10-22T15:04:16.8598062Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirAutoReconnect.java:28: error: cannot find symbol
+2026-10-22T15:04:16.8599770Z         if (mc.screen instanceof DisconnectedScreen) {
+2026-10-22T15:04:16.8600404Z             ^
+2026-10-22T15:04:16.8600859Z   symbol:   variable mc
+2026-10-22T15:04:16.8601358Z   location: class HaOirAutoReconnect
+2026-10-22T15:04:16.8602816Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirAutoReconnect.java:32: error: cannot find symbol
+2026-10-22T15:04:16.8604586Z                 info("正在尝试重新连接...");
+2026-10-22T15:04:16.8605082Z                 ^
+2026-10-22T15:04:16.8605523Z   symbol:   method info(String)
+2026-10-22T15:04:16.8606061Z   location: class HaOirAutoReconnect
+2026-10-22T15:04:16.8607487Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirAutoReconnect.java:33: error: cannot find symbol
+2026-10-22T15:04:16.8608950Z                 if (mc.getCurrentServer() != null) {
+2026-10-22T15:04:16.8609646Z                     ^
+2026-10-22T15:04:16.8610107Z   symbol:   variable mc
+2026-10-22T15:04:16.8610600Z   location: class HaOirAutoReconnect
+2026-10-22T15:04:16.8612046Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirAutoReconnect.java:34: error: cannot find symbol
+2026-10-22T15:04:16.8613822Z                     ServerAddress address = ServerAddress.parseString(mc.getCurrentServer().ip);
+2026-10-22T15:04:16.8614737Z                                                                       ^
+2026-10-22T15:04:16.8615342Z   symbol:   variable mc
+2026-10-22T15:04:16.8615847Z   location: class HaOirAutoReconnect
+2026-10-22T15:04:16.8617305Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirAutoReconnect.java:35: error: cannot find symbol
+2026-10-22T15:04:16.8619238Z                     ServerData info = new ServerData(mc.getCurrentServer().name, address.getHost(), false);
+2026-10-22T15:04:16.8620307Z                                                      ^
+2026-10-22T15:04:16.8620905Z   symbol:   variable mc
+2026-10-22T15:04:16.8621407Z   location: class HaOirAutoReconnect
+2026-10-22T15:04:16.8622893Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirAutoReconnect.java:36: error: cannot find symbol
+2026-10-22T15:04:16.8625177Z                     net.minecraft.client.gui.screens.ConnectScreen.startConnecting(new JoinMultiplayerScreen(new TitleScreen()), mc, address, info, false, null);
+2026-10-22T15:04:16.8626734Z                                                                                                                                  ^
+2026-10-22T15:04:16.8627508Z   symbol:   variable mc
+2026-10-22T15:04:16.8628017Z   location: class HaOirAutoReconnect
+2026-10-22T15:04:16.8629562Z /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirAutoReconnect.java:37: error: cannot find symbol
+2026-10-22T15:04:16.8631057Z                 } else mc.setScreen(new TitleScreen());
+2026-10-22T15:04:16.8631668Z                        ^
+2026-10-22T15:04:16.8632157Z   symbol:   variable mc
+2026-10-22T15:04:16.8632677Z   location: class HaOirAutoReconnect
+2026-10-22T15:04:17.9290884Z 79 errors
+2026-10-22T15:04:17.9301001Z 2 warnings
+2026-10-22T15:04:18.0291557Z 
+2026-10-22T15:04:18.0292358Z > Task :compileJava FAILED
+2026-10-22T15:04:18.0292845Z 
+2026-10-22T15:04:18.0293931Z [Incubating] Problems report is available at: file:///home/runner/work/haoir-ultimate/haoir-ultimate/build/reports/problems/problems-report.html
+2026-10-22T15:04:18.0320239Z 
+2026-10-22T15:04:18.0380392Z FAILURE: Build failed with an exception.
+2026-10-22T15:04:18.0380985Z 6 actionable tasks: 6 executed
+2026-10-22T15:04:18.0400202Z 
+2026-10-22T15:04:18.0400804Z * What went wrong:
+2026-10-22T15:04:18.0408742Z Execution failed for task ':compileJava' (registered by plugin class 'org.gradle.api.plugins.JavaBasePlugin').
+2026-10-22T15:04:18.0428213Z > Compilation failed; see the compiler output below.
+2026-10-22T15:04:18.0430295Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirStep.java:3: error: package meteordevelopment.meteorclient.events.world does not exist
+2026-10-22T15:04:18.0432160Z   import meteordevelopment.meteorclient.events.world.TickEvent;
+2026-10-22T15:04:18.0432933Z                                                     ^
+2026-10-22T15:04:18.0434766Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirStep.java:5: error: package meteordevelopment.meteorclient.systems.modules does not exist
+2026-10-22T15:04:18.0436831Z   import meteordevelopment.meteorclient.systems.modules.Categories;
+2026-10-22T15:04:18.0437838Z                                                        ^
+2026-10-22T15:04:18.0439924Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirStep.java:6: error: package meteordevelopment.meteorclient.systems.modules does not exist
+2026-10-22T15:04:18.0441905Z   import meteordevelopment.meteorclient.systems.modules.Module;
+2026-10-22T15:04:18.0442741Z                                                        ^
+2026-10-22T15:04:18.0444214Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirStep.java:20: error: package TickEvent does not exist
+2026-10-22T15:04:18.0445762Z       private void onTick(TickEvent.Post event) {
+2026-10-22T15:04:18.0446378Z                                    ^
+2026-10-22T15:04:18.0447973Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirStep.java:4: error: package meteordevelopment.meteorclient.settings does not exist
+2026-10-22T15:04:18.0452115Z   import meteordevelopment.meteorclient.settings.*;
+2026-10-22T15:04:18.0452870Z                                        ^
+2026-10-22T15:04:18.0454619Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirCriticals.java:3: error: package meteordevelopment.meteorclient.events.packets does not exist
+2026-10-22T15:04:18.0456751Z   import meteordevelopment.meteorclient.events.packets.PacketEvent;
+2026-10-22T15:04:18.0457643Z                                                       ^
+2026-10-22T15:04:18.0459692Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirCriticals.java:5: error: package meteordevelopment.meteorclient.systems.modules does not exist
+2026-10-22T15:04:18.0461761Z   import meteordevelopment.meteorclient.systems.modules.Categories;
+2026-10-22T15:04:18.0462630Z                                                        ^
+2026-10-22T15:04:18.0464479Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirCriticals.java:6: error: package meteordevelopment.meteorclient.systems.modules does not exist
+2026-10-22T15:04:18.0466525Z   import meteordevelopment.meteorclient.systems.modules.Module;
+2026-10-22T15:04:18.0467338Z                                                        ^
+2026-10-22T15:04:18.0469399Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirCriticals.java:25: error: package PacketEvent does not exist
+2026-10-22T15:04:18.0471006Z       private void onSendPacket(PacketEvent.Send event) {
+2026-10-22T15:04:18.0471664Z                                            ^
+2026-10-22T15:04:18.0473303Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirCriticals.java:4: error: package meteordevelopment.meteorclient.settings does not exist
+2026-10-22T15:04:18.0475109Z   import meteordevelopment.meteorclient.settings.*;
+2026-10-22T15:04:18.0475789Z                                        ^
+2026-10-22T15:04:18.0477798Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirAutoReconnect.java:3: error: package meteordevelopment.meteorclient.systems.modules does not exist
+2026-10-22T15:04:18.0480050Z   import meteordevelopment.meteorclient.systems.modules.Categories;
+2026-10-22T15:04:18.0480919Z                                                        ^
+2026-10-22T15:04:18.0482782Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirAutoReconnect.java:4: error: package meteordevelopment.meteorclient.systems.modules does not exist
+2026-10-22T15:04:18.0484876Z   import meteordevelopment.meteorclient.systems.modules.Module;
+2026-10-22T15:04:18.0485679Z                                                        ^
+2026-10-22T15:04:18.0487489Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirAutoReconnect.java:7: error: package meteordevelopment.meteorclient.events.world does not exist
+2026-10-22T15:04:18.0489762Z   import meteordevelopment.meteorclient.events.world.TickEvent;
+2026-10-22T15:04:18.0490599Z                                                     ^
+2026-10-22T15:04:18.0492247Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirAutoReconnect.java:27: error: package TickEvent does not exist
+2026-10-22T15:04:18.0493922Z       private void onTick(TickEvent.Post event) {
+2026-10-22T15:04:18.0494561Z                                    ^
+2026-10-22T15:04:18.0496349Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirAutoReconnect.java:5: error: package meteordevelopment.meteorclient.settings does not exist
+2026-10-22T15:04:18.0498346Z   import meteordevelopment.meteorclient.settings.*;
+2026-10-22T15:04:18.0499210Z                                        ^
+2026-10-22T15:04:18.0500524Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirStep.java:12: error: package BoolSetting does not exist
+2026-10-22T15:04:18.0507641Z       private final Setting<Boolean> vanilla = sgGeneral.add(new BoolSetting.Builder().name("vanilla").defaultValue(false).build());
+2026-10-22T15:04:18.0508935Z                                                                             ^
+2026-10-22T15:04:18.0510767Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirStep.java:13: error: package IntSetting does not exist
+2026-10-22T15:04:18.0513022Z       private final Setting<Integer> stepHeight = sgGeneral.add(new IntSetting.Builder().name("height").defaultValue(2).min(1).max(2).build());
+2026-10-22T15:04:18.0514315Z                                                                               ^
+2026-10-22T15:04:18.0515837Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirStep.java:22: error: package mc does not exist
+2026-10-22T15:04:18.0518193Z           if (mc.player.onGround() && !mc.player.isInWater() && !mc.player.isInLava() && mc.player.fallDistance == 0.0f && !mc.options.keyJump.isDown() && !mc.player.isShiftKeyDown()) {
+2026-10-22T15:04:18.0520055Z                 ^
+2026-10-22T15:04:18.0521481Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirStep.java:22: error: package mc does not exist
+2026-10-22T15:04:18.0526333Z           if (mc.player.onGround() && !mc.player.isInWater() && !mc.player.isInLava() && mc.player.fallDistance == 0.0f && !mc.options.keyJump.isDown() && !mc.player.isShiftKeyDown()) {
+2026-10-22T15:04:18.0528089Z                                          ^
+2026-10-22T15:04:18.0529952Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirStep.java:22: error: package mc does not exist
+2026-10-22T15:04:18.0532325Z           if (mc.player.onGround() && !mc.player.isInWater() && !mc.player.isInLava() && mc.player.fallDistance == 0.0f && !mc.options.keyJump.isDown() && !mc.player.isShiftKeyDown()) {
+2026-10-22T15:04:18.0533826Z                                                                    ^
+2026-10-22T15:04:18.0535283Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirStep.java:22: error: package mc does not exist
+2026-10-22T15:04:18.0537419Z           if (mc.player.onGround() && !mc.player.isInWater() && !mc.player.isInLava() && mc.player.fallDistance == 0.0f && !mc.options.keyJump.isDown() && !mc.player.isShiftKeyDown()) {
+2026-10-22T15:04:18.0539141Z                                                                                            ^
+2026-10-22T15:04:18.0544016Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirStep.java:22: error: package mc.options does not exist
+2026-10-22T15:04:18.0546530Z           if (mc.player.onGround() && !mc.player.isInWater() && !mc.player.isInLava() && mc.player.fallDistance == 0.0f && !mc.options.keyJump.isDown() && !mc.player.isShiftKeyDown()) {
+2026-10-22T15:04:18.0548193Z                                                                                                                                       ^
+2026-10-22T15:04:18.0549923Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirStep.java:22: error: package mc does not exist
+2026-10-22T15:04:18.0552425Z           if (mc.player.onGround() && !mc.player.isInWater() && !mc.player.isInLava() && mc.player.fallDistance == 0.0f && !mc.options.keyJump.isDown() && !mc.player.isShiftKeyDown()) {
+2026-10-22T15:04:18.0554166Z                                                                                                                                                               ^
+2026-10-22T15:04:18.0555948Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirStep.java:23: error: package mc does not exist
+2026-10-22T15:04:18.0557674Z               double rheight = mc.player.getBoundingBox().minY - mc.player.getY();
+2026-10-22T15:04:18.0558498Z                                  ^
+2026-10-22T15:04:18.0559803Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirStep.java:23: error: package mc does not exist
+2026-10-22T15:04:18.0561410Z               double rheight = mc.player.getBoundingBox().minY - mc.player.getY();
+2026-10-22T15:04:18.0562274Z                                                                    ^
+2026-10-22T15:04:18.0563773Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirStep.java:31: error: package mc does not exist
+2026-10-22T15:04:18.0565525Z           double posX = mc.player.getX(), posZ = mc.player.getZ(), y = mc.player.getY();
+2026-10-22T15:04:18.0566339Z                           ^
+2026-10-22T15:04:18.0567733Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirStep.java:31: error: package mc does not exist
+2026-10-22T15:04:18.0569908Z           double posX = mc.player.getX(), posZ = mc.player.getZ(), y = mc.player.getY();
+2026-10-22T15:04:18.0570769Z                                                    ^
+2026-10-22T15:04:18.0572224Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirStep.java:31: error: package mc does not exist
+2026-10-22T15:04:18.0573969Z           double posX = mc.player.getX(), posZ = mc.player.getZ(), y = mc.player.getY();
+2026-10-22T15:04:18.0574855Z                                                                          ^
+2026-10-22T15:04:18.0576599Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirCriticals.java:14: error: package EnumSetting does not exist
+2026-10-22T15:04:18.0586269Z       private final Setting<Mode> mode = sgGeneral.add(new EnumSetting.Builder<Mode>().name("mode").defaultValue(Mode.PACKET).build());
+2026-10-22T15:04:18.0588047Z                                                                       ^
+2026-10-22T15:04:18.0589863Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirCriticals.java:15: error: package IntSetting does not exist
+2026-10-22T15:04:18.0592323Z       private final Setting<Integer> packets = sgGeneral.add(new IntSetting.Builder().name("packets").defaultValue(2).min(1).sliderMax(5).visible(() -> mode.get() == Mode.PACKET).build());
+2026-10-22T15:04:18.0593791Z                                                                            ^
+2026-10-22T15:04:18.0595338Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirCriticals.java:16: error: package IntSetting does not exist
+2026-10-22T15:04:18.0597724Z       private final Setting<Integer> desyncDelay = sgGeneral.add(new IntSetting.Builder().name("desync-delay").defaultValue(10).min(0).sliderMax(500).visible(() -> mode.get() == Mode.PACKET).build());
+2026-10-22T15:04:18.0599548Z                                                                                ^
+2026-10-22T15:04:18.0601105Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirCriticals.java:29: error: package mc does not exist
+2026-10-22T15:04:18.0603070Z                   if (!mc.player.onGround() || mc.options.keyJump.isDown() || mc.player.isInWater() || mc.player.isInLava()) return;
+2026-10-22T15:04:18.0604132Z                          ^
+2026-10-22T15:04:18.0605610Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirCriticals.java:29: error: package mc.options does not exist
+2026-10-22T15:04:18.0607604Z                   if (!mc.player.onGround() || mc.options.keyJump.isDown() || mc.player.isInWater() || mc.player.isInLava()) return;
+2026-10-22T15:04:18.0608712Z                                                          ^
+2026-10-22T15:04:18.0610383Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirCriticals.java:29: error: package mc does not exist
+2026-10-22T15:04:18.0612388Z                   if (!mc.player.onGround() || mc.options.keyJump.isDown() || mc.player.isInWater() || mc.player.isInLava()) return;
+2026-10-22T15:04:18.0613686Z                                                                                 ^
+2026-10-22T15:04:18.0615133Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirCriticals.java:29: error: package mc does not exist
+2026-10-22T15:04:18.0617089Z                   if (!mc.player.onGround() || mc.options.keyJump.isDown() || mc.player.isInWater() || mc.player.isInLava()) return;
+2026-10-22T15:04:18.0618345Z                                                                                                          ^
+2026-10-22T15:04:18.0620630Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirCriticals.java:35: error: package mc does not exist
+2026-10-22T15:04:18.0622280Z                   double x = mc.player.getX(), y = mc.player.getY(), z = mc.player.getZ();
+2026-10-22T15:04:18.0623028Z                                ^
+2026-10-22T15:04:18.0624342Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirCriticals.java:35: error: package mc does not exist
+2026-10-22T15:04:18.0625890Z                   double x = mc.player.getX(), y = mc.player.getY(), z = mc.player.getZ();
+2026-10-22T15:04:18.0626946Z                                                      ^
+2026-10-22T15:04:18.0628490Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirCriticals.java:35: error: package mc does not exist
+2026-10-22T15:04:18.0630769Z                   double x = mc.player.getX(), y = mc.player.getY(), z = mc.player.getZ();
+2026-10-22T15:04:18.0631636Z                                                                            ^
+2026-10-22T15:04:18.0633242Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirAutoReconnect.java:16: error: package IntSetting does not exist
+2026-10-22T15:04:18.0635305Z       private final Setting<Integer> delay = sgGeneral.add(new IntSetting.Builder().name("delay").defaultValue(3).min(1).sliderMax(30).build());
+2026-10-22T15:04:18.0636498Z                                                                          ^
+2026-10-22T15:04:18.0637930Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirStep.java:10: error: cannot inherit from final Module
+2026-10-22T15:04:18.0639360Z   public class HaOirStep extends Module {
+2026-10-22T15:04:18.0639920Z                                  ^
+2026-10-22T15:04:18.0641138Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirCriticals.java:11: error: cannot inherit from final Module
+2026-10-22T15:04:18.0644328Z   public class HaOirCriticals extends Module {
+2026-10-22T15:04:18.0644917Z                                       ^
+2026-10-22T15:04:18.0646378Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirAutoReconnect.java:14: error: cannot inherit from final Module
+2026-10-22T15:04:18.0647964Z   public class HaOirAutoReconnect extends Module {
+2026-10-22T15:04:18.0648595Z                                           ^
+2026-10-22T15:04:18.0650174Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirStep.java:11: error: cannot find symbol
+2026-10-22T15:04:18.0651732Z       private final SettingGroup sgGeneral = settings.getDefaultGroup();
+2026-10-22T15:04:18.0652493Z                     ^
+2026-10-22T15:04:18.0653006Z     symbol:   class SettingGroup
+2026-10-22T15:04:18.0653571Z     location: class HaOirStep
+2026-10-22T15:04:18.0654871Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirStep.java:12: error: cannot find symbol
+2026-10-22T15:04:18.0656728Z       private final Setting<Boolean> vanilla = sgGeneral.add(new BoolSetting.Builder().name("vanilla").defaultValue(false).build());
+2026-10-22T15:04:18.0657812Z                     ^
+2026-10-22T15:04:18.0658307Z     symbol:   class Setting
+2026-10-22T15:04:18.0658831Z     location: class HaOirStep
+2026-10-22T15:04:18.0660321Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirStep.java:13: error: cannot find symbol
+2026-10-22T15:04:18.0662279Z       private final Setting<Integer> stepHeight = sgGeneral.add(new IntSetting.Builder().name("height").defaultValue(2).min(1).max(2).build());
+2026-10-22T15:04:18.0663859Z                     ^
+2026-10-22T15:04:18.0664354Z     symbol:   class Setting
+2026-10-22T15:04:18.0664887Z     location: class HaOirStep
+2026-10-22T15:04:18.0666239Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirCriticals.java:13: error: cannot find symbol
+2026-10-22T15:04:18.0667848Z       private final SettingGroup sgGeneral = settings.getDefaultGroup();
+2026-10-22T15:04:18.0668582Z                     ^
+2026-10-22T15:04:18.0669240Z     symbol:   class SettingGroup
+2026-10-22T15:04:18.0669832Z     location: class HaOirCriticals
+2026-10-22T15:04:18.0671546Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirCriticals.java:14: error: cannot find symbol
+2026-10-22T15:04:18.0673510Z       private final Setting<Mode> mode = sgGeneral.add(new EnumSetting.Builder<Mode>().name("mode").defaultValue(Mode.PACKET).build());
+2026-10-22T15:04:18.0674638Z                     ^
+2026-10-22T15:04:18.0675130Z     symbol:   class Setting
+2026-10-22T15:04:18.0675685Z     location: class HaOirCriticals
+2026-10-22T15:04:18.0677010Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirCriticals.java:15: error: cannot find symbol
+2026-10-22T15:04:18.0679421Z       private final Setting<Integer> packets = sgGeneral.add(new IntSetting.Builder().name("packets").defaultValue(2).min(1).sliderMax(5).visible(() -> mode.get() == Mode.PACKET).build());
+2026-10-22T15:04:18.0680843Z                     ^
+2026-10-22T15:04:18.0681337Z     symbol:   class Setting
+2026-10-22T15:04:18.0681863Z     location: class HaOirCriticals
+2026-10-22T15:04:18.0683234Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirCriticals.java:16: error: cannot find symbol
+2026-10-22T15:04:18.0685479Z       private final Setting<Integer> desyncDelay = sgGeneral.add(new IntSetting.Builder().name("desync-delay").defaultValue(10).min(0).sliderMax(500).visible(() -> mode.get() == Mode.PACKET).build());
+2026-10-22T15:04:18.0686998Z                     ^
+2026-10-22T15:04:18.0687485Z     symbol:   class Setting
+2026-10-22T15:04:18.0688019Z     location: class HaOirCriticals
+2026-10-22T15:04:18.0689716Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirAutoReconnect.java:15: error: cannot find symbol
+2026-10-22T15:04:18.0691401Z       private final SettingGroup sgGeneral = settings.getDefaultGroup();
+2026-10-22T15:04:18.0692194Z                     ^
+2026-10-22T15:04:18.0692716Z     symbol:   class SettingGroup
+2026-10-22T15:04:18.0693323Z     location: class HaOirAutoReconnect
+2026-10-22T15:04:18.0694771Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirAutoReconnect.java:16: error: cannot find symbol
+2026-10-22T15:04:18.0696851Z       private final Setting<Integer> delay = sgGeneral.add(new IntSetting.Builder().name("delay").defaultValue(3).min(1).sliderMax(30).build());
+2026-10-22T15:04:18.0698041Z                     ^
+2026-10-22T15:04:18.0698548Z     symbol:   class Setting
+2026-10-22T15:04:18.0699213Z     location: class HaOirAutoReconnect
+2026-10-22T15:04:18.0700596Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/Modules.java:78: error: cannot find symbol
+2026-10-22T15:04:18.0702392Z           add(new haoirdevelopment.haoirclient.systems.modules.haoir.HaOirCriticals());
+2026-10-22T15:04:18.0703453Z                                                                     ^
+2026-10-22T15:04:18.0704149Z     symbol:   class HaOirCriticals
+2026-10-22T15:04:18.0704946Z     location: package haoirdevelopment.haoirclient.systems.modules.haoir
+2026-10-22T15:04:18.0706367Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/Modules.java:79: error: cannot find symbol
+2026-10-22T15:04:18.0708322Z           add(new haoirdevelopment.haoirclient.systems.modules.haoir.HaOirStep());
+2026-10-22T15:04:18.0709320Z                                                                     ^
+2026-10-22T15:04:18.0709894Z     symbol:   class HaOirStep
+2026-10-22T15:04:18.0710577Z     location: package haoirdevelopment.haoirclient.systems.modules.haoir
+2026-10-22T15:04:18.0711887Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/Modules.java:81: error: cannot find symbol
+2026-10-22T15:04:18.0713509Z           add(new haoirdevelopment.haoirclient.systems.modules.haoir.HaOirPacketClicker());
+2026-10-22T15:04:18.0714821Z                                                                     ^
+2026-10-22T15:04:18.0715510Z     symbol:   class HaOirPacketClicker
+2026-10-22T15:04:18.0716292Z     location: package haoirdevelopment.haoirclient.systems.modules.haoir
+2026-10-22T15:04:18.0717722Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/Modules.java:82: error: cannot find symbol
+2026-10-22T15:04:18.0719486Z           add(new haoirdevelopment.haoirclient.systems.modules.haoir.HaOirAutoReconnect());
+2026-10-22T15:04:18.0720501Z                                                                     ^
+2026-10-22T15:04:18.0721159Z     symbol:   class HaOirAutoReconnect
+2026-10-22T15:04:18.0721964Z     location: package haoirdevelopment.haoirclient.systems.modules.haoir
+2026-10-22T15:04:18.0723534Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirStep.java:11: error: cannot find symbol
+2026-10-22T15:04:18.0725091Z       private final SettingGroup sgGeneral = settings.getDefaultGroup();
+2026-10-22T15:04:18.0725865Z                                              ^
+2026-10-22T15:04:18.0726454Z     symbol:   variable settings
+2026-10-22T15:04:18.0727027Z     location: class HaOirStep
+2026-10-22T15:04:18.0728350Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirStep.java:16: error: cannot find symbol
+2026-10-22T15:04:18.0730810Z           super(Categories.Movement, "haoir-step", "原味Phobos爬台阶."); 
+2026-10-22T15:04:18.0731832Z                 ^
+2026-10-22T15:04:18.0732328Z     symbol:   variable Categories
+2026-10-22T15:04:18.0732926Z     location: class HaOirStep
+2026-10-22T15:04:18.0734221Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirStep.java:21: error: cannot find symbol
+2026-10-22T15:04:18.0735665Z           if (mc.player == null || mc.level == null) return;
+2026-10-22T15:04:18.0736333Z               ^
+2026-10-22T15:04:18.0736794Z     symbol:   variable mc
+2026-10-22T15:04:18.0737325Z     location: class HaOirStep
+2026-10-22T15:04:18.0738672Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirStep.java:21: error: cannot find symbol
+2026-10-22T15:04:18.0740255Z           if (mc.player == null || mc.level == null) return;
+2026-10-22T15:04:18.0740907Z                                    ^
+2026-10-22T15:04:18.0741465Z     symbol:   variable mc
+2026-10-22T15:04:18.0741977Z     location: class HaOirStep
+2026-10-22T15:04:18.0743323Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirStep.java:51: error: cannot find symbol
+2026-10-22T15:04:18.0745303Z           mc.getConnection().send(new ServerboundMovePlayerPacket.Pos(x, y, z, false, false)); 
+2026-10-22T15:04:18.0746292Z           ^
+2026-10-22T15:04:18.0746757Z     symbol:   variable mc
+2026-10-22T15:04:18.0747303Z     location: class HaOirStep
+2026-10-22T15:04:18.0748663Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirCriticals.java:13: error: cannot find symbol
+2026-10-22T15:04:18.0750727Z       private final SettingGroup sgGeneral = settings.getDefaultGroup();
+2026-10-22T15:04:18.0751458Z                                              ^
+2026-10-22T15:04:18.0752039Z     symbol:   variable settings
+2026-10-22T15:04:18.0752598Z     location: class HaOirCriticals
+2026-10-22T15:04:18.0753922Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirCriticals.java:21: error: cannot find symbol
+2026-10-22T15:04:18.0755786Z           super(Categories.Combat, "haoir-criticals", "原味Phobos暴击."); 
+2026-10-22T15:04:18.0756516Z                 ^
+2026-10-22T15:04:18.0756994Z     symbol:   variable Categories
+2026-10-22T15:04:18.0757563Z     location: class HaOirCriticals
+2026-10-22T15:04:18.0759339Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirCriticals.java:27: error: cannot find symbol
+2026-10-22T15:04:18.0761058Z               if (interactPacket.getType() == ServerboundInteractPacket.ActionType.ATTACK) {
+2026-10-22T15:04:18.0762022Z                                                                        ^
+2026-10-22T15:04:18.0762672Z     symbol:   variable ActionType
+2026-10-22T15:04:18.0763284Z     location: class ServerboundInteractPacket
+2026-10-22T15:04:18.0764760Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirCriticals.java:28: error: cannot find symbol
+2026-10-22T15:04:18.0766280Z                   if (mc.player == null || mc.level == null) return;
+2026-10-22T15:04:18.0766945Z                       ^
+2026-10-22T15:04:18.0767605Z     symbol:   variable mc
+2026-10-22T15:04:18.0768176Z     location: class HaOirCriticals
+2026-10-22T15:04:18.0769724Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirCriticals.java:28: error: cannot find symbol
+2026-10-22T15:04:18.0771234Z                   if (mc.player == null || mc.level == null) return;
+2026-10-22T15:04:18.0771930Z                                            ^
+2026-10-22T15:04:18.0772509Z     symbol:   variable mc
+2026-10-22T15:04:18.0773049Z     location: class HaOirCriticals
+2026-10-22T15:04:18.0774439Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirCriticals.java:45: error: cannot find symbol
+2026-10-22T15:04:18.0776272Z                               mc.getConnection().send(new ServerboundMovePlayerPacket.StatusOnly(false, false)); 
+2026-10-22T15:04:18.0777273Z                               ^
+2026-10-22T15:04:18.0777806Z     symbol:   variable mc
+2026-10-22T15:04:18.0778302Z     location: class HaOirCriticals
+2026-10-22T15:04:18.0779802Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirCriticals.java:55: error: cannot find symbol
+2026-10-22T15:04:18.0781508Z           mc.getConnection().send(new ServerboundMovePlayerPacket.Pos(x, y, z, false, false)); 
+2026-10-22T15:04:18.0782385Z           ^
+2026-10-22T15:04:18.0782780Z     symbol:   variable mc
+2026-10-22T15:04:18.0783236Z     location: class HaOirCriticals
+2026-10-22T15:04:18.0784436Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirAutoReconnect.java:15: error: cannot find symbol
+2026-10-22T15:04:18.0785844Z       private final SettingGroup sgGeneral = settings.getDefaultGroup();
+2026-10-22T15:04:18.0786579Z                                              ^
+2026-10-22T15:04:18.0787119Z     symbol:   variable settings
+2026-10-22T15:04:18.0787661Z     location: class HaOirAutoReconnect
+2026-10-22T15:04:18.0789221Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirAutoReconnect.java:20: error: cannot find symbol
+2026-10-22T15:04:18.0791181Z           super(Categories.Player, "haoir-reconnect", "自动重连."); 
+2026-10-22T15:04:18.0791851Z                 ^
+2026-10-22T15:04:18.0792653Z     symbol:   variable Categories
+2026-10-22T15:04:18.0793263Z     location: class HaOirAutoReconnect
+2026-10-22T15:04:18.0794561Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirAutoReconnect.java:28: error: cannot find symbol
+2026-10-22T15:04:18.0795965Z           if (mc.screen instanceof DisconnectedScreen) {
+2026-10-22T15:04:18.0796595Z               ^
+2026-10-22T15:04:18.0797061Z     symbol:   variable mc
+2026-10-22T15:04:18.0797607Z     location: class HaOirAutoReconnect
+2026-10-22T15:04:18.0799001Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirAutoReconnect.java:33: error: cannot find symbol
+2026-10-22T15:04:18.0800810Z                   if (mc.getCurrentServer() != null) {
+2026-10-22T15:04:18.0801444Z                       ^
+2026-10-22T15:04:18.0801923Z     symbol:   variable mc
+2026-10-22T15:04:18.0802461Z     location: class HaOirAutoReconnect
+2026-10-22T15:04:18.0803915Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirAutoReconnect.java:34: error: cannot find symbol
+2026-10-22T15:04:18.0805509Z                       ServerAddress address = ServerAddress.parseString(mc.getCurrentServer().ip);
+2026-10-22T15:04:18.0806383Z                                                                         ^
+2026-10-22T15:04:18.0807011Z     symbol:   variable mc
+2026-10-22T15:04:18.0807539Z     location: class HaOirAutoReconnect
+2026-10-22T15:04:18.0808903Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirAutoReconnect.java:35: error: cannot find symbol
+2026-10-22T15:04:18.0810667Z                       ServerData info = new ServerData(mc.getCurrentServer().name, address.getHost(), false);
+2026-10-22T15:04:18.0811612Z                                                        ^
+2026-10-22T15:04:18.0812192Z     symbol:   variable mc
+2026-10-22T15:04:18.0812731Z     location: class HaOirAutoReconnect
+2026-10-22T15:04:18.0814104Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirAutoReconnect.java:36: error: cannot find symbol
+2026-10-22T15:04:18.0816055Z                       net.minecraft.client.gui.screens.ConnectScreen.startConnecting(new JoinMultiplayerScreen(new TitleScreen()), mc, address, info, false, null);
+2026-10-22T15:04:18.0817541Z                                                                                                                                    ^
+2026-10-22T15:04:18.0818305Z     symbol:   variable mc
+2026-10-22T15:04:18.0818820Z     location: class HaOirAutoReconnect
+2026-10-22T15:04:18.0820363Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirAutoReconnect.java:37: error: cannot find symbol
+2026-10-22T15:04:18.0821889Z                   } else mc.setScreen(new TitleScreen());
+2026-10-22T15:04:18.0822565Z                          ^
+2026-10-22T15:04:18.0823058Z     symbol:   variable mc
+2026-10-22T15:04:18.0823586Z     location: class HaOirAutoReconnect
+2026-10-22T15:04:18.0824149Z   warning: unknown enum constant Level.FULL
+2026-10-22T15:04:18.0824959Z     reason: class file for com.google.j2objc.annotations.ReflectionSupport$Level not found
+2026-10-22T15:04:18.0826825Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/utils/entity/EntityUtils.java:118: warning: [deprecation] isSolid() in BlockStateBase has been deprecated
+2026-10-22T15:04:18.0828596Z               if (block != Blocks.COBWEB && block != Blocks.BAMBOO_SAPLING && state.isSolid()) break;
+2026-10-22T15:04:18.0829724Z                                                                                    ^
+2026-10-22T15:04:18.0831153Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirStep.java:25: error: cannot find symbol
+2026-10-22T15:04:18.0833168Z                   if (!vanilla.get()) { ncpStep(rheight); toggle(); }
+2026-10-22T15:04:18.0833844Z                                                           ^
+2026-10-22T15:04:18.0834403Z     symbol:   method toggle()
+2026-10-22T15:04:18.0834932Z     location: class HaOirStep
+2026-10-22T15:04:18.0836215Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirCriticals.java:27: error: cannot find symbol
+2026-10-22T15:04:18.0837845Z               if (interactPacket.getType() == ServerboundInteractPacket.ActionType.ATTACK) {
+2026-10-22T15:04:18.0838878Z                                 ^
+2026-10-22T15:04:18.0839552Z     symbol:   method getType()
+2026-10-22T15:04:18.0840507Z     location: variable interactPacket of type ServerboundInteractPacket
+2026-10-22T15:04:18.0842141Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirAutoReconnect.java:32: error: cannot find symbol
+2026-10-22T15:04:18.0843857Z                   info("正在尝试重新连接...");
+2026-10-22T15:04:18.0844412Z                   ^
+2026-10-22T15:04:18.0844890Z     symbol:   method info(String)
+2026-10-22T15:04:18.0845923Z     location: class HaOirAutoReconnect
+2026-10-22T15:04:18.0847717Z   /home/runner/work/haoir-ultimate/haoir-ultimate/src/main/java/haoirdevelopment/haoirclient/systems/modules/haoir/HaOirAutoReconnect.java:23: error: method does not override or implement a method from a supertype
+2026-10-22T15:04:18.0849483Z       @Override
+2026-10-22T15:04:18.0849938Z       ^
+2026-10-22T15:04:18.0850343Z   79 errors
+2026-10-22T15:04:18.0850773Z   2 warnings
+2026-10-22T15:04:18.0851076Z 
+2026-10-22T15:04:18.0851318Z * Try:
+2026-10-22T15:04:18.0851931Z > Check your code and dependencies to fix the compilation error(s)
+2026-10-22T15:04:18.0852889Z > Run with --scan to get full insights from a Build Scan (powered by Develocity).
+2026-10-22T15:04:18.0853548Z 
+2026-10-22T15:04:18.0853831Z BUILD FAILED in 1m 32s
+2026-10-22T15:04:18.1280276Z Configuration cache entry stored.
+2026-10-22T15:04:18.5199751Z ##[error]Process completed with exit code 1.
+2026-10-22T15:04:18.5401069Z Post job cleanup.
+2026-10-22T15:04:18.7291698Z In post-action step
+2026-10-22T15:04:18.7301797Z Stopping all Gradle daemons before saving Gradle User Home state
+2026-10-22T15:04:18.7303019Z Stopping Gradle daemons for /home/runner/.gradle/wrapper/dists/gradle-9.8.1-bin/a2l6ltp3k1vth6lwipzm5p2jp/gradle-9.8.1
+2026-10-22T15:04:18.7314518Z (node:2633) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-22T15:04:18.7315687Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-22T15:04:18.7321254Z [command]/home/runner/.gradle/wrapper/dists/gradle-9.8.1-bin/a2l6ltp3k1vth6lwipzm5p2jp/gradle-9.8.1/bin/gradle --stop
+2026-10-22T15:04:19.4185059Z No Gradle daemons are running.
+2026-10-22T15:04:19.4254439Z ##[group]Caching Gradle state
+2026-10-22T15:04:19.4339551Z Not saving configuration-cache state, as no encryption key was provided
+2026-10-22T15:04:19.4388077Z Caching wrapper-zips with path '/home/runner/.gradle/wrapper/dists/gradle-9.8.1-bin/a2l6ltp3k1vth6lwipzm5p2jp' and cache key: gradle-wrapper-zips-v1-c614003d12ab0c472d72f6756dbe25ae
+2026-10-22T15:04:19.4515282Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/haoir-ultimate/haoir-ultimate --files-from manifest.txt --use-compress-program zstdmt
+2026-10-22T15:04:19.6636325Z Caching dependencies with path '/home/runner/.gradle/caches/modules-*/files-*/*/*/*/*' and cache key: gradle-dependencies-v1-a9a641981ccfe0638c4601e7b9712b3d
+2026-10-22T15:04:19.6706309Z Caching instrumented-jars with path '/home/runner/.gradle/caches/jars-*/*/' and cache key: gradle-instrumented-jars-v1-f26582a10734d4095ec594bc8fe748dd
+2026-10-22T15:04:19.6838838Z Caching kotlin-dsl with path '/home/runner/.gradle/caches/*/kotlin-dsl/accessors/*/
+2026-10-22T15:04:19.6841528Z /home/runner/.gradle/caches/*/kotlin-dsl/scripts/*/' and cache key: gradle-kotlin-dsl-v1-b79997a90e6f1446368949e6599faa9d
+2026-10-22T15:04:19.6874252Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/haoir-ultimate/haoir-ultimate --files-from manifest.txt --use-compress-program zstdmt
+2026-10-22T15:04:19.7011659Z Caching groovy-dsl with path '/home/runner/.gradle/caches/*/groovy-dsl/*/' and cache key: gradle-groovy-dsl-v1-28f43ac12c4affd29f2c4b80f5354d4d
+2026-10-22T15:04:19.7490496Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/haoir-ultimate/haoir-ultimate --files-from manifest.txt --use-compress-program zstdmt
+2026-10-22T15:04:19.7800064Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/haoir-ultimate/haoir-ultimate --files-from manifest.txt --use-compress-program zstdmt
+2026-10-22T15:04:19.8088964Z ##[warning]Failed to save cache entry with path '/home/runner/.gradle/caches/jars-*/*/' and key: gradle-instrumented-jars-v1-f26582a10734d4095ec594bc8fe748dd: Error: <h2>Our services aren't available right now</h2><p>We're working to restore all services as soon as possible. Please check back soon.</p>08yXaagAAAACayZRcesccSLXZwLZx5+w6UEhYMzFFREdFMDIxNQBFZGdl
+2026-10-22T15:04:19.8649576Z ##[warning]Failed to save cache entry with path '/home/runner/.gradle/caches/*/kotlin-dsl/accessors/*/
+/home/runner/.gradle/caches/*/kotlin-dsl/scripts/*/' and key: gradle-kotlin-dsl-v1-b79997a90e6f1446368949e6599faa9d: Error: <h2>Our services aren't available right now</h2><p>We're working to restore all services as soon as possible. Please check back soon.</p>08yXaagAAAAC0m1++0UpoQrU+28ZsrXv0UEhYMzFFREdFMDYxMgBFZGdl
+2026-10-22T15:04:19.8772636Z ##[warning]Failed to save cache entry with path '/home/runner/.gradle/caches/*/groovy-dsl/*/' and key: gradle-groovy-dsl-v1-28f43ac12c4affd29f2c4b80f5354d4d: Error: <h2>Our services aren't available right now</h2><p>We're working to restore all services as soon as possible. Please check back soon.</p>08yXaagAAAACGZrvUUuLqRK8c+Q37Nk0gUEhYMzFFREdFMDUxNABFZGdl
+2026-10-22T15:04:19.9225025Z Caching transforms with path '/home/runner/.gradle/caches/transforms-4/*/
+2026-10-22T15:04:19.9226361Z /home/runner/.gradle/caches/*/transforms/*/' and cache key: gradle-transforms-v1-0e58d141935a0c39544ec3523166d1f7
+2026-10-22T15:04:19.9814521Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/haoir-ultimate/haoir-ultimate --files-from manifest.txt --use-compress-program zstdmt
+2026-10-22T15:04:20.1416229Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/haoir-ultimate/haoir-ultimate --files-from manifest.txt --use-compress-program zstdmt
+2026-10-22T15:04:20.2316129Z ##[warning]Failed to save cache entry with path '/home/runner/.gradle/wrapper/dists/gradle-9.8.1-bin/a2l6ltp3k1vth6lwipzm5p2jp' and key: gradle-wrapper-zips-v1-c614003d12ab0c472d72f6756dbe25ae: Error: <h2>Our services aren't available right now</h2><p>We're working to restore all services as soon as possible. Please check back soon.</p>09CXaagAAAABUvLhWUMGKRbpIzQa6/Yn5UEhYMzFFREdFMDIwNwBFZGdl
+2026-10-22T15:04:20.3558024Z ##[warning]Failed to save cache entry with path '/home/runner/.gradle/caches/transforms-4/*/
+/home/runner/.gradle/caches/*/transforms/*/' and key: gradle-transforms-v1-0e58d141935a0c39544ec3523166d1f7: Error: <h2>Our services aren't available right now</h2><p>We're working to restore all services as soon as possible. Please check back soon.</p>09CXaagAAAAB346rMaq14QLDgKfL0OlUmUEhYMzFFREdFMDUxNQBFZGdl
+2026-10-22T15:04:20.5913407Z ##[warning]Failed to save cache entry with path '/home/runner/.gradle/caches/modules-*/files-*/*/*/*/*' and key: gradle-dependencies-v1-a9a641981ccfe0638c4601e7b9712b3d: Error: <h2>Our services aren't available right now</h2><p>We're working to restore all services as soon as possible. Please check back soon.</p>09CXaagAAAAD/Cbv6eqPeQqSaDd8+v9AXUEhYMzFFREdFMDUxNwBFZGdl
+2026-10-22T15:04:20.6368293Z Caching Gradle User Home with cache key: gradle-home-v1|Linux|build[d92b1dfb78eba2d15d83c8b100da3e24]-5154be9ed98a758b1797de054d4a0c41201dc40c
+2026-10-22T15:04:20.6445305Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/haoir-ultimate/haoir-ultimate --files-from manifest.txt --use-compress-program zstdmt
+2026-10-22T15:04:21.1692038Z ##[warning]Failed to save cache entry with path '/home/runner/.gradle/caches,/home/runner/.gradle/notifications,/home/runner/.gradle/.setup-gradle' and key: gradle-home-v1|Linux|build[d92b1dfb78eba2d15d83c8b100da3e24]-5154be9ed98a758b1797de054d4a0c41201dc40c: Error: <h2>Our services aren't available right now</h2><p>We're working to restore all services as soon as possible. Please check back soon.</p>09SXaagAAAABOgZBNVXb4T7uF3c0Q5ZMIUEhYMzFFREdFMDIxOQBFZGdl
+2026-10-22T15:04:21.1695563Z ##[endgroup]
+2026-10-22T15:04:21.1695878Z Generating Job Summary
+2026-10-22T15:04:21.1708143Z Completed post-action step
+2026-10-22T15:04:21.1868315Z Post job cleanup.
+2026-10-22T15:04:21.3222493Z (node:2741) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-22T15:04:21.3223174Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-22T15:04:21.3356083Z Post job cleanup.
+2026-10-22T15:04:21.4300449Z [command]/usr/bin/git version
+2026-10-22T15:04:21.4329016Z git version 2.55.0
+2026-10-22T15:04:21.4371192Z Temporarily overriding HOME='/home/runner/work/_temp/56f5c923-7144-4aa7-a2ef-0ed98c9b30cc' before making global git config changes
+2026-10-22T15:04:21.4375496Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-22T15:04:21.4378321Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/haoir-ultimate/haoir-ultimate
+2026-10-22T15:04:21.4421745Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-22T15:04:21.4462281Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-22T15:04:21.4685101Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-22T15:04:21.4710892Z http.https://github.com/.extraheader
+2026-10-22T15:04:21.4718552Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-22T15:04:21.4752371Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-22T15:04:21.4972645Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-22T15:04:21.5010254Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-22T15:04:21.5394362Z Cleaning up orphan processes
+2026-10-22T15:04:21.5686432Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-java@v4, gradle/actions/setup-gradle@v3. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

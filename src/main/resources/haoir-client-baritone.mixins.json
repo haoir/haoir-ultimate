@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "haoirdevelopment.haoirclient.mixin.baritone",
+  "compatibilityLevel": "JAVA_21",
+  "plugin": "haoirdevelopment.haoirclient.MixinPlugin",
+  "client": [
+    "ComeCommandMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "required": false,
+  "package": "haoirdevelopment.haoirclient.mixin.indigo",
+  "compatibilityLevel": "JAVA_21",
+  "plugin": "haoirdevelopment.haoirclient.MixinPlugin",
+  "client": [
+    "AltModelBlockRendererImplMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
